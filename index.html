@@ -4,9 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ANSIUDAD</title>
-    <script async src="./app.js"></script>
+    <script async src="./src/app.js"></script>
+    <script async src="./src/main.jsx"></script>
     <link rel="stylesheet" href="./index.css" />
-    <div class="bg-green-300" id="hello">HIII</div>
   </head>
-  <body></body>
+  <body class="w-screen flex flex-col items-center justify-center">
+    <form action="get" class="w-1/2">
+      <button type="submit" class="bg-green-300" id="gen-events">HIII</button>
+    </form>
+    <div id="event-container" class="w-1/2"></div>
+  </body>
 </html>
