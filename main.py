@@ -2,14 +2,18 @@ import os
 from typing import Dict, List
 from groq import Groq
 from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
+class RequestBody(BaseModel):
+    size: str
+    
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Adjust as needed, e.g., ["http://localhost:3000"]
+    allow_origins=["http://localhost:5173"],  # ALLOW DEVELOPMENT ORIGIN
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -43,8 +47,8 @@ def chat_completion(
     )
     return response.choices[0].message.content
 
-@app.get("/getEvent/")
-def getEventRequest():
+@app.get("/generateEvents/")
+def generateEvents():
     try:
         return chat_completion(messages=[
             user("Olvida cualquier interaccion anterior"),
@@ -60,7 +64,9 @@ def getEventRequest():
         ])
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+    
 
+    
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
