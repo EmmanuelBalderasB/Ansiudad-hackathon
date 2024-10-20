@@ -8,10 +8,7 @@ import Play from "./components/Play";
 const App = () => {
   return (
     <Router>
-      <div
-        className="min-h-screen bg-fondo"
-        style={{ backgroundImage: "url(./static/FONDO.jpg)" }}
-      >
+      <div className="min-h-screen bg-yellow-200">
         <Navbar />
         <Routes>
           <Route path="/" element={<About />} />

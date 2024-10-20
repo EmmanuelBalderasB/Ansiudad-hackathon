@@ -59,26 +59,31 @@ const Play = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div className="min-h-screen bg-fondo bg-cover py-8">
       <div className="max-w-7xl mx-auto px-4">
         <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">
-          Genrador de Incidente y Roles
+          Generador de Incidente y Roles
         </h1>
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Event Generator Section */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
-              Generar Incidente
-            </h2>
+          <div className="bg-white drop-shadow-md rounded-lg shadow-lg p-8">
+            <div className="flex flex-row space-x-1">
+              <h2 className="text-2xl mb-6 text-purple-800 font-light">
+                Generar
+              </h2>
+              <h2 className="text-2xl font-bold mb-6 text-purple-800">
+                Incidentes
+              </h2>
+            </div>
             <div className="max-w-2xl mx-auto">
               <form onSubmit={getEvent} className="mb-4">
                 <button
                   type="submit"
-                  className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-150"
+                  className="w-full bg-purple-700 hover:bg-purple-900 text-white font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-150"
                   disabled={isLoading}
                 >
-                  {isLoading ? "Generating Event..." : "Generate New Event"}
+                  {isLoading ? "Generando..." : "Generar"}
                 </button>
               </form>
 
@@ -101,18 +106,21 @@ const Play = () => {
           </div>
 
           {/* Roles Generator Section */}
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
-              Roles Generator
-            </h2>
+          <div className="bg-white drop-shadow-md rounded-lg shadow-lg p-8">
+            <div className="flex flex-row space-x-1">
+              <h2 className="text-2xl mb-6 text-purple-800 font-light">
+                Generar
+              </h2>
+              <h2 className="text-2xl font-bold mb-6 text-purple-800">Roles</h2>
+            </div>
             <div className="max-w-2xl mx-auto">
               <form onSubmit={getRoles} className="mb-4">
                 <button
                   type="submit"
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-150"
+                  className="w-full bg-purple-700 hover:bg-purple-900  text-white font-semibold py-2 px-4 rounded disabled:opacity-50 disabled:cursor-not-allowed transition duration-150"
                   disabled={isRolesLoading}
                 >
-                  {isRolesLoading ? "Generating Roles..." : "Generate 5 Roles"}
+                  {isRolesLoading ? "Generando Roles..." : "Generar"}
                 </button>
               </form>
 

@@ -1,7 +1,7 @@
 import React from "react";
 const Rules = () => {
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
+    <div className="min-h-screen bg-fondo bg-cover py-8">
       <div className="max-w-4xl mx-auto px-4">
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
@@ -26,10 +26,10 @@ const Rules = () => {
               </p>
             </div>
             <div className="bg-gray-50 p-4 rounded-lg">
-              <h3 className="font-semibold text-lg mb-2">3. Interaction</h3>
+              <h3 className="font-semibold text-lg mb-2">3. Interaccion</h3>
               <p className="text-gray-600">
-                You can generate as many events as you'd like to explore
-                different scenarios.
+                Puedes generar cuantos eventos y rolos que desees gracias al
+                poder del LLM LLAMA 3.2 hecho por Meta
               </p>
             </div>
           </div>

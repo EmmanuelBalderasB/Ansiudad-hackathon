@@ -7,7 +7,7 @@ export default {
         darkYellow: "##f3e29e",
       },
       backgroundImage: {
-        fondo: "url('./static/FONDO.jpg')",
+        fondo: "url('./static/FONDO.png')",
       },
     },
   },
