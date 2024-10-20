@@ -2,7 +2,14 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        darkYellow: "##f3e29e",
+      },
+      backgroundImage: {
+        fondo: "url('./static/FONDO.jpg')",
+      },
+    },
   },
   plugins: [],
 };
