@@ -4,3 +4,5 @@
     uvicorn main:app --reload
 
 #### STARTUP FRONT DEV SERVER npm run dev
+
+    npm run dev
