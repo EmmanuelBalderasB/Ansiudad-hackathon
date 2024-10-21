@@ -8,6 +8,7 @@ export default {
       },
       backgroundImage: {
         fondo: "url('./static/FONDO.png')",
+        animated: "url('./static/animated.gif')",
       },
     },
   },

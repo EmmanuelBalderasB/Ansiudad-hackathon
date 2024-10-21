@@ -2,9 +2,9 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-fondo bg-cover py-8">
+    <div className="min-h-screen bg-fondo bg-cover py-8  justify-center">
       <div className="max-w-4xl mx-auto px-4">
-        <div className="bg-white rounded-lg shadow-lg p-8">
+        <div className="bg-white rounded-lg shadow-lg p-8 mt-32">
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
             ¿QUÉ ES ANSIUDAD?
           </h2>

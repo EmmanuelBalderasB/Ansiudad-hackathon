@@ -37,19 +37,13 @@ const Play = () => {
     setErrorRoles(null);
 
     try {
-      const response = await fetch("http://localhost:8000/generateRoles", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ number: 5 }),
-      });
+      const response = await fetch("http://localhost:8000/generateRoles");
       if (!response.ok) {
         throw new Error("Failed to fetch roles");
       }
       const data = await response.json();
-      setRoles(data);
-      console.log(data);
+      const parsed = JSON.parse(data);
+      setRoles(parsed);
     } catch (error) {
       setErrorRoles(error.message);
       console.error("Error fetching roles:", error);
@@ -96,9 +90,7 @@ const Play = () => {
               {event && (
                 <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200">
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-4 text-gray-800">
-                      {event}
-                    </h3>
+                    <h3 className="text-xl mb-4 text-gray-800">{event}</h3>
                   </div>
                 </div>
               )}
@@ -131,28 +123,15 @@ const Play = () => {
               )}
 
               {roles && (
-                <div className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200">
+                <div
+                  className="bg-gray-50 rounded-lg overflow-hidden border border-gray-200 text-xl"
+                  id="roles"
+                >
                   <div className="p-6">
                     <div className="space-y-4">
-                      {Array.isArray(roles) ? (
-                        roles.map((role, index) => (
-                          <div
-                            key={index}
-                            className="p-3 bg-white rounded shadow"
-                          >
-                            <h3 className="font-semibold text-gray-800">
-                              Role {index + 1}
-                            </h3>
-                            <p className="text-gray-600">{role}</p>
-                          </div>
-                        ))
-                      ) : (
-                        <div className="p-3 bg-white rounded shadow">
-                          <p className="text-gray-600">
-                            {JSON.stringify(roles)}
-                          </p>
-                        </div>
-                      )}
+                      <h2 className="font-bold ">{roles.role}</h2>
+                      <h3>Prioridades: {roles.priorities}</h3>
+                      <h3>Intereses: {roles.interests}</h3>
                     </div>
                   </div>
                 </div>
